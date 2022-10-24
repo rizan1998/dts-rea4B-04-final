@@ -9,6 +9,7 @@ import { Outlet } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
 import theme from "./themes/theme";
+import Home from "./Components/Home/Home";
 function App() {
   return (
     <ThemeProvider theme={theme}>

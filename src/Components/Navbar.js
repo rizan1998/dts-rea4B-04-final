@@ -6,9 +6,11 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import UserLog from "./Auth/UserLogs";
+
 const navItems = [
   { text: "Home", link: "/" },
-  { text: "Pricing", link: "/pricing" },
+  { text: "Premium", link: "/premium" },
   { text: "About", link: "/about" },
 ];
 
@@ -39,6 +41,7 @@ function Navbar() {
               </NavLink>
             ))}
           </Box>
+          <UserLog />
         </Toolbar>
       </AppBar>
     </Box>
