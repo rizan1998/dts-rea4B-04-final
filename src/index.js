@@ -12,44 +12,49 @@ import NotFound from "./Components/NotFound";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import About from "./Components/About/About";
+import store from "./app/store";
 
 import Home from "./Components/Home/Home";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="premium"
-            element={
-              <PrivateComponent>
-                <PremiumPage />
-              </PrivateComponent>
-            }
-          />
-          <Route path="about" element={<About />} />
-          <Route
-            path="login"
-            element={
-              <PrivateComponent loginOnly={false}>
-                <Login />
-              </PrivateComponent>
-            }
-          />
-          <Route
-            path="register"
-            element={
-              <PrivateComponent loginOnly={false}>
-                <Register />
-              </PrivateComponent>
-            }
-          />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="premium"
+              element={
+                <PrivateComponent>
+                  <PremiumPage />
+                </PrivateComponent>
+              }
+            />
+            <Route path="about" element={<About />} />
+            <Route
+              path="login"
+              element={
+                <PrivateComponent loginOnly={false}>
+                  <Login />
+                </PrivateComponent>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <PrivateComponent loginOnly={false}>
+                  <Register />
+                </PrivateComponent>
+              }
+            />
+            <Route path="detailAnime/:id" element={<div>detail anime</div>} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
