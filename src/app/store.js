@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import animeSlice from "../reducers/animeSlice";
+import animeReducer from "../reducers/animeSlice";
 // import { colorApi } from "../services/colorApi";
 import { animeApi } from "../services/animeApi";
 
@@ -14,7 +14,7 @@ import { animeApi } from "../services/animeApi";
 
 const store = configureStore({
   reducer: {
-    anime: animeSlice,
+    anime: animeReducer,
     [animeApi.reducerPath]: animeApi.reducer,
   },
   // Menambahkan middleware untuk caching, invalidation, pooling

@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
@@ -10,12 +9,13 @@ import { useGetColorByIdQuery } from "../../services/animeApi";
 import { Link, useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function DetailAnime() {
   const id = useParams().id;
   const { data, error, isLoading } = useGetColorByIdQuery(id);
+
+  console.log(data);
 
   if (isLoading) {
     return (
@@ -49,7 +49,7 @@ function DetailAnime() {
     );
   }
 
-  if (data.status == 404 || data.length == 0 || error) {
+  if (data.status === 404 || data.length === 0) {
     return (
       <>
         <Container maxWidth="md" className="cari-anime" sx={{ marginTop: "100px", marginBottom: "600px", border: "1px #FF760D solid", padding: "20px" }}>

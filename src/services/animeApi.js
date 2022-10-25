@@ -9,13 +9,16 @@ export const animeApi = createApi({
   tagTypes: ["Color"],
   endpoints: (builder) => ({
     getColors: builder.query({
-      query: () => "schedules",
+      query: () => "anime",
       providesTags: ["Color"],
     }),
     getColorById: builder.query({
       query: (id) => `anime/${id}/full`,
     }),
+    searchById: builder.query({
+      query: (id) => `anime/${id}`,
+    }),
   }),
 });
 
-export const { useGetColorsQuery, useGetColorByIdQuery } = animeApi;
+export const { useGetColorsQuery, useGetColorByIdQuery, useSearchByIdQuery } = animeApi;
