@@ -13,6 +13,8 @@ import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import About from "./Components/About/About";
 import store from "./app/store";
+import DetailAnime from "./Components/Home/DetailAnime";
+import ScrollToTop from "./helpers/ScrollToTop";
 
 import Home from "./Components/Home/Home";
 import { Provider } from "react-redux";
@@ -22,6 +24,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="/" element={<Home />} />
@@ -50,7 +53,7 @@ root.render(
                 </PrivateComponent>
               }
             />
-            <Route path="detailAnime/:id" element={<div>detail anime</div>} />
+            <Route path="detailAnime/:id" element={<DetailAnime />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

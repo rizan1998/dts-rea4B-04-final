@@ -13,35 +13,9 @@ export const animeApi = createApi({
       providesTags: ["Color"],
     }),
     getColorById: builder.query({
-      query: (id) => `colors/${id}`,
-    }),
-    addColor: builder.mutation({
-      query: (color) => ({
-        url: "colors",
-        method: "POST",
-        body: color,
-      }),
-      // lakukan invalidate tag jika mutation ini terjadi
-      // jadinya dia memberitahu kalau tag ini sudah invalid
-      // tolong semua yang terkait di fetch ulang
-      invalidatesTags: ["Color"],
-    }),
-    updateColor: builder.mutation({
-      query: ({ id, color }) => ({
-        url: `colors/${id}`,
-        method: "PUT",
-        body: color,
-      }),
-      invalidatesTags: ["Color"],
-    }),
-    deleteColor: builder.mutation({
-      query: (id) => ({
-        url: `colors/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ["Color"],
+      query: (id) => `anime/${id}/full`,
     }),
   }),
 });
 
-export const { useGetColorsQuery, useGetColorByIdQuery, useAddColorMutation, useUpdateColorMutation, useDeleteColorMutation } = animeApi;
+export const { useGetColorsQuery, useGetColorByIdQuery } = animeApi;
