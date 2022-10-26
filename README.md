@@ -1,6 +1,6 @@
 
 #MY GIF
-![](https://gfycat.com/blanduglydevilfish)
+![](https://thumbs.gfycat.com/BlandUglyDevilfish-max-1mb.gif)
 
 #LINK APP
 https://mynime-dts-04.netlify.app/
