@@ -99,7 +99,7 @@ body {
   text-shadow: none;
 }
 
-.cari-anime #search-bar{
+.cari-anime .search-bar{
   border: solid 1px  #FF760D;
   color: #FF760D !important;
   background-color: none;

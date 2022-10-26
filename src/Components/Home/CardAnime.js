@@ -17,22 +17,20 @@ function CardAnime(item) {
   }
 
   return (
-    <Grid item xs={2} key={item.item.mal_id}>
-      <Link to={link} style={{ textDecoration: "none" }} preventScrollReset={true}>
-        <Card className="cardParent" sx={{ maxWidth: 345 }}>
-          <CardMedia component="img" height="190" image={item.item.images.jpg.image_url} alt="green iguana" />
-          <CardContent style={{ height: "70px" }}>
-            <Typography gutterBottom sx={{ fontSize: "15px" }} variant="p" component="div">
-              {item.item.title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary"></Typography>
-            <Typography sx={{ marginTop: "10px", fontSize: "12px" }} variant="p" color="text.secondary">
-              Genre: {genres}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Link>
-    </Grid>
+    <Link to={link} style={{ textDecoration: "none" }} preventScrollReset={true}>
+      <Card className="cardParent" sx={{ maxWidth: 200 }}>
+        <CardMedia component="img" height="190" image={item.item.images.jpg.image_url} alt="green iguana" />
+        <CardContent style={{ height: "70px" }}>
+          <Typography gutterBottom sx={{ fontSize: "15px" }} variant="p" component="div">
+            {item.item.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary"></Typography>
+          <Typography sx={{ marginTop: "10px", fontSize: "12px" }} variant="p" color="text.secondary">
+            Genre: {genres}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
 

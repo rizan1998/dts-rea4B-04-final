@@ -10,6 +10,8 @@ import { Link, useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CircularProgress from "@mui/material/CircularProgress";
+import Button from "@mui/material/Button";
+import TvOffIcon from "@mui/icons-material/TvOff";
 
 function DetailAnime() {
   const id = useParams().id;
@@ -69,8 +71,8 @@ function DetailAnime() {
   }
 
   return (
-    <>
-      <Container maxWidth="md" className="cari-anime" sx={{ marginTop: "100px", marginBottom: "600px", border: "1px #FF760D solid", padding: "20px" }}>
+    <div style={{ marginBottom: "500px" }}>
+      <Container maxWidth="md" className="cari-anime" sx={{ marginTop: "100px", border: "1px #FF760D solid", padding: "20px" }}>
         <Grid container spacing={2}>
           <Grid item xs={4}>
             <Card sx={{ maxWidth: 345 }}>
@@ -125,25 +127,34 @@ function DetailAnime() {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid container spacing={1}>
-              <Grid item xs={3}>
-                <Typography sx={{ color: "white" }} variant="h5" gutterBottom>
-                  Synopsis
-                </Typography>
-              </Grid>
-              <Grid item sx={{ color: "white" }} xs={1}>
-                :
-              </Grid>
-              <Grid item xs={8}>
-                <Typography sx={{ color: "white" }} variant="span" gutterBottom>
-                  {data.data.synopsis ? data.data.synopsis : "-"}
-                </Typography>
-              </Grid>
-            </Grid>
+          </Grid>
+          <Grid item style={{ color: "white" }} xs={12}>
+            <Box>Synopsis</Box>
+            <Box> {data.data.synopsis ? data.data.synopsis : "-"}</Box>
           </Grid>
         </Grid>
       </Container>
-    </>
+      <Container maxWidth="md" style={{ marginTop: "20px" }}>
+        <Grid container direction="row" justifyContent="flex-end" alignItems="center">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button style={{ backgroundColor: "#FF760D" }}>Back</Button>
+          </Link>
+        </Grid>
+      </Container>
+
+      <Container maxWidth="md" style={{ marginTop: "20px" }}>
+        <Box style={{ marginTop: "20px" }}>
+          <h1 style={{ color: "#FF760D " }}>Trailer anime</h1>
+        </Box>
+        {data.data.trailer.embed_url ? (
+          <iframe width="853" height="480" src={data.data.trailer.embed_url} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="Embedded youtube"></iframe>
+        ) : (
+          <Box style={{ marginTop: "100px", textAlign: "center" }}>
+            <TvOffIcon style={{ color: "#FF760D " }}></TvOffIcon> <h3 style={{ color: "#FF760D " }}>Sory Trailer not exsist !</h3>
+          </Box>
+        )}
+      </Container>
+    </div>
   );
 }
 

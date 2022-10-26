@@ -26,60 +26,56 @@ function CariAnime() {
   }, []);
 
   const HandleSubmit = () => {
-    alert("test");
     dispatch(animeAsync(malId));
   };
 
-  // console.log(user);
   const isEmpty = Object.keys(user).length === 0;
   if (isEmpty == false) {
-    // console.log(user.images.jpg.image_url);
-    // setImageUrl(user.images.jpg.image_url);
   }
 
-  console.log(user);
   const [malId, setMalId] = useState(1);
-  // console.log(user.length > 0);
 
   return (
     <>
       <Container className="cari-anime" sx={{ marginTop: "50px", marginBottom: "100px" }}>
-        <Box style={{ display: "flex", justifyContent: "space-between", alignItems: "center", alignContent: "center" }}>
-          <Box>
-            <p style={{ fontSize: "30px", color: "#FF760D" }}>Cari Anime</p>
+        <Box style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", alignContent: "center" }}>
+          <Box style={{ backgroundColor: "" }}>
+            <p style={{ fontSize: "30px", color: "#FF760D" }}>Cari Anime berdasarkan id</p>
+            <Box style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", alignContent: "center" }}>
+              <TextField hiddenLabel defaultValue="1" name="idAnime" onChange={({ target }) => setMalId(target.value)} placeholder="Masukan id" className="search-bar" variant="filled" id="search-bar" size="small" />
+              <IconButton type="submit" onClick={HandleSubmit} style={{ color: "white" }} aria-label="search">
+                <SearchIcon style={{ fill: "#FF760D" }} />
+              </IconButton>
+            </Box>
           </Box>
-          <Box style={{ marginTop: "20px" }}>
-            <TextField hiddenLabel defaultValue="1" name="idAnime" onChange={({ target }) => setMalId(target.value)} placeholder="Masukan nama anime" className="search-bar" variant="filled" id="search-bar" size="small" />
-            <IconButton type="submit" onClick={HandleSubmit} style={{ color: "white" }} aria-label="search">
-              <SearchIcon style={{ fill: "#FF760D" }} />
-            </IconButton>
+          <Box style={{ marginTop: "20px", width: "100%", backgroundColor: "" }}>
+            <Grid container spacing={1} direction="row" justifyContent="center" alignItems="center">
+              <Grid item xs={4}>
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    height="200"
+                    src={user.images?.jpg.image_url ?? "https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"}
+                    image={user.length > 0 ? user.images.jpg.image_url : ""}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {user.title ? user.title : ""}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Genre : {user.length > 0 ? user.genres.map((item) => <span key={item.name}>{item.name}, </span>) : ""}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small">Share</Button>
+                    <Button size="small">Learn More</Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
-        <Grid container spacing={1} direction="row" justifyContent="center" alignItems="center">
-          <Grid item xs={4}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardMedia
-                component="img"
-                alt="green iguana"
-                height="200"
-                src={user.images?.jpg.image_url ?? "https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"}
-                image={user.length > 0 ? user.images.jpg.image_url : ""}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {user.title ? user.title : ""}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Genre : {user.length > 0 ? user.genres.map((item) => <span key={item.name}>{item.name}, </span>) : ""}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        </Grid>
       </Container>
     </>
   );

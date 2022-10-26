@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { Box } from "@mui/icons-material";
+import { Box, Favorite } from "@mui/icons-material";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,9 +11,9 @@ import PremiumPage from "./Components/PremiumPage/PremiumPage";
 import NotFound from "./Components/NotFound";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
-import About from "./Components/About/About";
 import store from "./app/store";
 import DetailAnime from "./Components/Home/DetailAnime";
+import About from "./Components/About/About";
 import ScrollToTop from "./helpers/ScrollToTop";
 
 import Home from "./Components/Home/Home";
@@ -29,10 +29,10 @@ root.render(
           <Route element={<App />}>
             <Route path="/" element={<Home />} />
             <Route
-              path="premium"
+              path="favorit"
               element={
                 <PrivateComponent>
-                  <PremiumPage />
+                  <Favorite />
                 </PrivateComponent>
               }
             />

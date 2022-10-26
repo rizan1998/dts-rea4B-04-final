@@ -43,19 +43,21 @@ const Login = () => {
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography style={{ color: "#FF760D" }} component="h1" variant="h5">
           Sign in
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
-          <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
+          <TextField margin="normal" className="search-bar" required fullWidth id="email" label="Email Address" style={{ border: "1px #FF760D solid ", color: "white" }} name="email" autoComplete="email" autoFocus />
+          <TextField margin="normal" className="search-bar" required fullWidth style={{ border: "1px #FF760D solid ", color: "white" }} name="password" label="Password" type="password" id="password" autoComplete="current-password" />
           <Typography color="red">{errorMessage}</Typography>
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+          <Button style={{ backgroundColor: "#FF760D" }} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
             Sign In
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/register">{"Don't have an account? Sign Up"}</Link>
+              <Link style={{ color: "#FF760D", textDecoration: "none" }} to="/register">
+                {"Don't have an account? Sign Up"}
+              </Link>
             </Grid>
           </Grid>
         </Box>

@@ -10,7 +10,7 @@ import UserLog from "./Auth/UserLogs";
 
 const navItems = [
   { text: "Home", link: "/" },
-  { text: "Premium", link: "/premium" },
+  { text: "Favorit", link: "/favorit" },
   { text: "About", link: "/about" },
 ];
 
