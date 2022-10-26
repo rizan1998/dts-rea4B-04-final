@@ -36,7 +36,7 @@ function Navbar() {
           </Typography>
           <Box sx={{ display: "block" }}>
             {navItems.map((item) => (
-              <NavLink to={item.link} key={item.text} className={({ isActive }) => (isActive ? "nav-active" : "nav-inactive")}>
+              <NavLink end to={item.link} key={item.text} className={({ isActive }) => (isActive ? "nav-active" : "nav-inactive")}>
                 {item.text}
               </NavLink>
             ))}

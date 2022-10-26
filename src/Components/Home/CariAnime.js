@@ -37,6 +37,7 @@ function CariAnime() {
     // setImageUrl(user.images.jpg.image_url);
   }
 
+  console.log(user);
   const [malId, setMalId] = useState(1);
   // console.log(user.length > 0);
 
@@ -57,13 +58,11 @@ function CariAnime() {
         <Grid container spacing={1} direction="row" justifyContent="center" alignItems="center">
           <Grid item xs={4}>
             <Card sx={{ maxWidth: 345 }}>
-              {/* {user.length > 0 ? user.image.jpg.image_url : "tidak ada"} */}
-              {/* <img src={user.images.jpg.image_url} alt="user avatar" /> */}
               <CardMedia
                 component="img"
                 alt="green iguana"
                 height="200"
-                src={user.length > 0 ? user.images.jpg.image_url : "https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"}
+                src={user.images?.jpg.image_url ?? "https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"}
                 image={user.length > 0 ? user.images.jpg.image_url : ""}
               />
               <CardContent>

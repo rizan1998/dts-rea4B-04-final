@@ -26,7 +26,7 @@ root.render(
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<App />}>
+          <Route element={<App />}>
             <Route path="/" element={<Home />} />
             <Route
               path="premium"
