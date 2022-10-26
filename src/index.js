@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { Box, Favorite } from "@mui/icons-material";
+import { Box } from "@mui/icons-material";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -15,6 +15,7 @@ import store from "./app/store";
 import DetailAnime from "./Components/Home/DetailAnime";
 import About from "./Components/About/About";
 import ScrollToTop from "./helpers/ScrollToTop";
+import FavoritePage from "./Components/Favorit/Favorite";
 
 import Home from "./Components/Home/Home";
 import { Provider } from "react-redux";
@@ -32,7 +33,7 @@ root.render(
               path="favorit"
               element={
                 <PrivateComponent>
-                  <Favorite />
+                  <FavoritePage />
                 </PrivateComponent>
               }
             />
