@@ -1,6 +1,6 @@
 
 #MY GIF
-![Uploading BlandUglyDevilfish-size_restricted.gif…]()
+<a href="https://thumbs.gfycat.com/BlandUglyDevilfish-size_restricted.gif"><img src="https://thumbs.gfycat.com/BlandUglyDevilfish-size_restricted.gif"/><a>
 
 
 #LINK APP
